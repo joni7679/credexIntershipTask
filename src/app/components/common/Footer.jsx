@@ -48,16 +48,12 @@ const footerLinks = [
 
 export default function Footer() {
     return (
-        <footer className="bg-white pt-16 pb-8 px-4 md:px-8">
+        <footer className="bg-white pt-16 pb-8 px-4 md:px-8 rounded-xl shadow-sm">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 sm:gap-x-8">
-                    {/* Logo Section */}
                     <div className="lg:flex lg:items-center">
                         <span className='capitalize'>ai spend audit</span>
-
                     </div>
-
-                    {/* Social Media Section */}
                     <div className="lg:flex lg:items-center">
                         <ul className="flex flex-wrap gap-6">
                             {socialLinks.map((social) => (
@@ -80,8 +76,6 @@ export default function Footer() {
                             ))}
                         </ul>
                     </div>
-
-                    {/* Dynamic Link Columns */}
                     {footerLinks.map((section) => (
                         <div key={section.title}>
                             <h3 className="text-slate-900 font-semibold text-sm mb-6">
@@ -102,7 +96,6 @@ export default function Footer() {
                         </div>
                     ))}
                 </div>
-
                 <p className="text-slate-600 text-sm mt-8">
                     © ai spend audit. All rights reserved.
                 </p>
