@@ -5,8 +5,9 @@ import { Plus } from "lucide-react";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-
+import { useRouter } from 'next/navigation'
 const SpendForm = () => {
+    const router = useRouter();
     const planOptions = {
         ChatGPT: ["Plus", "Team", "Enterprise"],
         Claude: ["Pro", "Team", "Enterprise"],
@@ -65,6 +66,7 @@ const SpendForm = () => {
             });
             console.log(res.data);
             toast.success("Audit completed successfully");
+            router.push("/result")
         } catch (error) {
             console.log(error);
             toast.error(error.message);
@@ -138,7 +140,6 @@ const SpendForm = () => {
                                             </select>
                                         </div>
                                     </div>
-
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div className="mt-3">
                                             <label className="block text-sm font-medium text-gray-700 mb-2">
